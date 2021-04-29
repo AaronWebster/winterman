@@ -1,0 +1,8 @@
+!/bin/bash
+set -o errexit
+set -o xtrace
+
+# Only run in the configure phase of the Debian package.
+[[ "$1" != "configure" ]] && exit 0
+
+# TODO: Start services, set up users, etc.
