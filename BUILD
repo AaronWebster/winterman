@@ -48,9 +48,9 @@ pkg_tar(
 genrule(
     name = "version",
     outs = ["VERSION"],
-    cmd = "./$(location tools/mkbuildinfo.sh) > \"$@\"",
+    cmd = "./$(location tools/make_build_info.sh) > \"$@\"",
     stamp = 1,
-    tools = ["tools/mkbuildinfo.sh"],
+    tools = ["tools/make_build_info.sh"],
 )
 
 pkg_deb(
