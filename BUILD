@@ -46,13 +46,12 @@ pkg_tar(
 )
 
 genrule(
-  name = "version",
-  outs = ["VERSION"],
-  stamp = 1,
-  cmd = "./$(location tools/mkbuildinfo.sh) > \"$@\"",
-  tools = [ "tools/mkbuildinfo.sh", ],
+    name = "version",
+    outs = ["VERSION"],
+    cmd = "./$(location tools/mkbuildinfo.sh) > \"$@\"",
+    stamp = 1,
+    tools = ["tools/mkbuildinfo.sh"],
 )
-
 
 pkg_deb(
     name = "winterman_deb",
@@ -62,6 +61,5 @@ pkg_deb(
     maintainer = "Aaron Webster",
     package = "winterman",
     postinst = "postinst",
-    # echo "$(date +%Y.%m.%d)-git$(git rev-parse --short HEAD)"
-    version = "2021.05.03-git9ee4201",
+    version_file = "VERSION",
 )
