@@ -60,6 +60,7 @@ pkg_deb(
     depends = [
         "autossh",
         "locate",
+        "lsof",
 	# No creds in package, manual configuration required.
         "ddclient", 
         "openvpn",

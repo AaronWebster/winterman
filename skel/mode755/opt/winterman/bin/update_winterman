@@ -1,4 +1,7 @@
 #!/bin/bash
+set -e
+
+[[ "$(lsof /var/lib/dpkg/lock)" ]] && exit 0
 
 sudo apt-get update \
   -o Dir::Etc::sourcelist=sources.list.d/winterman.list \
@@ -6,3 +9,4 @@ sudo apt-get update \
   -o APT::Get::List-Cleanup="0"
 
 sudo apt install winterman
+exit 0
