@@ -9,7 +9,7 @@ systemctl enable winterman-autossh@canyon.service
 
 enabled_units=(
   "ssh.service"
-  "winterman@canyon.service"
+  "winterman-autossh@canyon.service"
   "ddclient.service"
 )
 
