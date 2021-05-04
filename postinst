@@ -10,6 +10,7 @@ enabled_units=(
   "ssh.service"
   "winterman-autossh@canyon.service"
   "winterman-apt.timer"
+  "winterman-apt.service"
   "ddclient.service"
 )
 
