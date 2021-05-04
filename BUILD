@@ -60,6 +60,7 @@ pkg_deb(
     depends = [
         "autossh",
         "ddclient",
+        "locate",
     ],
     description = "Winterman System Package",
     homepage = "https://github.com/AaronWebster/winterman",

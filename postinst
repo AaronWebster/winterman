@@ -5,5 +5,18 @@ set -o xtrace
 # Only run in the configure phase of the Debian package.
 [[ "$1" != "configure" ]] && exit 0
 
-# TODO: Start services, set up users, etc.
+systemctl enable winterman-autossh@canyon.service
+
+enabled_units=(
+  "ssh.service"
+  "winterman@canyon.service"
+  "ddclient.service"
+)
+
+currently_enabled_units="$(systemctl list-unit-files --state=enabled)"
+for unit in "${enabled_units[@]}"; do
+  [[ "${currently_enabled_units}" == *"${unit}"* ]] && continue
+  systemctl enable "${unit}"
+done
+
 exit 0
