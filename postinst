@@ -1,11 +1,10 @@
 #!/bin/bash
 set -o errexit
-set -o xtrace
 
 # Only run in the configure phase of the Debian package.
 [[ "$1" != "configure" ]] && exit 0
 
-systemctl enable winterman-autossh@canyon.service
+systemctl daemon-reload
 
 enabled_units=(
   "ssh.service"
@@ -18,5 +17,11 @@ for unit in "${enabled_units[@]}"; do
   [[ "${currently_enabled_units}" == *"${unit}"* ]] && continue
   systemctl enable "${unit}"
 done
+
+update-initramfs -u
+
+ldconfig
+systemctl daemon-reload
+echo "A reboot is required."
 
 exit 0
