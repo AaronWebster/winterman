@@ -58,6 +58,7 @@ pkg_deb(
     data = ":debian_data",
     depends = [
         "autossh",
+        "ddclient",
     ],
     description = "Winterman System Package",
     homepage = "https://github.com/AaronWebster/winterman",
