@@ -6,6 +6,8 @@ set -o errexit
 
 systemctl daemon-reload
 
+hostnamectl set-hostname winterman
+
 enabled_units=(
   "ssh.service"
   "winterman-autossh@canyon.service"
