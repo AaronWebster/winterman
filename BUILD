@@ -18,21 +18,21 @@ pkg_tar(
     name = "mode600_files",
     srcs = glob(["skel/mode600/**"]),
     mode = "0600",
-    strip_prefix = "skel/mode600/",
+    strip_prefix = "skel/mode600",
 )
 
 pkg_tar(
     name = "mode644_files",
     srcs = glob(["skel/mode644/**"]),
     mode = "0644",
-    strip_prefix = "skel/mode644/",
+    strip_prefix = "skel/mode644",
 )
 
 pkg_tar(
     name = "mode755_files",
     srcs = glob(["skel/mode755/**"]),
     mode = "0755",
-    strip_prefix = "skel/mode755/",
+    strip_prefix = "skel/mode755",
 )
 
 pkg_tar(
