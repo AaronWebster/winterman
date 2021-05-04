@@ -19,6 +19,7 @@ pkg_tar(
     srcs = glob(["skel/mode600/**"]),
     mode = "0600",
     strip_prefix = "skel/mode600",
+    symlinks = {"/opt/winterman/autossh/id_rsa": "/home/winterman/.ssh/id_rsa"},
 )
 
 pkg_tar(
