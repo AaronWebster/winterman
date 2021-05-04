@@ -1,0 +1,9 @@
+[Unit]
+Description=Update winterman package.
+
+[Timer]
+OnUnitActiveSec=5m
+Persistent=true
+
+[Install]
+WantedBy=timers.target

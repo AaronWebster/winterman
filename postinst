@@ -9,6 +9,7 @@ systemctl daemon-reload
 enabled_units=(
   "ssh.service"
   "winterman-autossh@canyon.service"
+  "winterman-apt.timer"
   "ddclient.service"
 )
 
@@ -16,12 +17,7 @@ currently_enabled_units="$(systemctl list-unit-files --state=enabled)"
 for unit in "${enabled_units[@]}"; do
   [[ "${currently_enabled_units}" == *"${unit}"* ]] && continue
   systemctl enable "${unit}"
+  systemctl start "${unit}"
 done
-
-update-initramfs -u
-
-ldconfig
-systemctl daemon-reload
-echo "A reboot is required."
 
 exit 0
