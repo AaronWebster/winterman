@@ -6,3 +6,4 @@ set -o xtrace
 [[ "$1" != "configure" ]] && exit 0
 
 # TODO: Start services, set up users, etc.
+exit 0
