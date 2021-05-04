@@ -4,8 +4,6 @@ set -o errexit
 # Only run in the configure phase of the Debian package.
 [[ "$1" != "configure" ]] && exit 0
 
-apt-key add /opt/winterman/etc/apt/public.key
-
 systemctl daemon-reload
 
 hostnamectl set-hostname winterman
