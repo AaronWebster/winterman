@@ -56,6 +56,9 @@ genrule(
 pkg_deb(
     name = "winterman_deb",
     data = ":debian_data",
+    depends = [
+        "autossh",
+    ],
     description = "Winterman System Package",
     homepage = "https://github.com/AaronWebster/winterman",
     maintainer = "Aaron Webster",
