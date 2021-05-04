@@ -59,8 +59,10 @@ pkg_deb(
     data = ":debian_data",
     depends = [
         "autossh",
-        "ddclient",
         "locate",
+	# No creds in package, manual configuration required.
+        "ddclient", 
+        "openvpn",
     ],
     description = "Winterman System Package",
     homepage = "https://github.com/AaronWebster/winterman",
