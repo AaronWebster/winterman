@@ -14,6 +14,28 @@
 
 load("@rules_pkg//:pkg.bzl", "pkg_deb", "pkg_tar")
 
+genrule(
+    name = "version",
+    outs = ["VERSION"],
+    cmd = "./$(location tools/make_build_info.sh) > \"$@\"",
+    stamp = 1,
+    tools = ["tools/make_build_info.sh"],
+)
+
+genrule(
+    name = "motd",
+    srcs = ["VERSION"],
+    outs = ["winterman_motd.sh"],
+    cmd = "echo '#!/bin/bash' > \"$@\" && echo -n \'echo Winterman version \' >> \"$@\" && cat ./$(location VERSION) >> \"$@\"",
+)
+
+pkg_tar(
+    name = "motd_files",
+    srcs = ["winterman_motd.sh"],
+    mode = "0755",
+    package_dir = "/etc/profile.d",
+)
+
 pkg_tar(
     name = "mode600_files",
     srcs = glob(["skel/mode600/**"]),
@@ -43,15 +65,8 @@ pkg_tar(
         ":mode600_files",
         ":mode644_files",
         ":mode755_files",
+        ":motd_files",
     ],
-)
-
-genrule(
-    name = "version",
-    outs = ["VERSION"],
-    cmd = "./$(location tools/make_build_info.sh) > \"$@\"",
-    stamp = 1,
-    tools = ["tools/make_build_info.sh"],
 )
 
 pkg_deb(
@@ -61,8 +76,8 @@ pkg_deb(
         "autossh",
         "locate",
         "lsof",
-	# No creds in package, manual configuration required.
-        "ddclient", 
+        # No creds in package, manual configuration required.
+        "ddclient",
         "openvpn",
     ],
     description = "Winterman System Package",
