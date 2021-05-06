@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 """Synthesizes speech from the input string of text or ssml.
 
 Note: ssml must be well-formed according to:
@@ -8,12 +7,10 @@ Note: ssml must be well-formed according to:
 import argparse
 import os
 
-
 parser = argparse.ArgumentParser()
-parser.add_argument("echo")
+parser.add_argument('echo')
 args = parser.parse_args()
 print args.echo
-
 
 from google.cloud import texttospeech
 
@@ -40,11 +37,9 @@ response = client.synthesize_speech(synthesis_input, voice, audio_config)
 
 # The response's audio_content is binary.
 with open('output.mp3', 'wb') as out:
-    # Write the response to the output file.
-    out.write(response.audio_content)
-    print('Audio content written to file "output.mp3"')
+  # Write the response to the output file.
+  out.write(response.audio_content)
+  print('Audio content written to file "output.mp3"')
 
-os.system("mplayer /var/www/html/voxrecorded/output.mp3")
+os.system('mplayer /var/www/html/voxrecorded/output.mp3')
 # os.system("rm /var/www/html/voxrecorded/output.mp3")
-
-

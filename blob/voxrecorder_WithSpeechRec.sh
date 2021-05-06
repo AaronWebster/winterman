@@ -26,10 +26,9 @@ export AUDIODEV=hw:1,0
 # export GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
 # export GOOGLE_APPLICATION_CREDENTIALS="/home/pi/focus-champion-122520-98f9b9a3e314.json"
 
-
 # I forked the transcoding so the recorder is listening more
 # so audio snippets between  silence get sent for forked transcoding and recorder restarts automatically -
-fork_transcode () {
+fork_transcode()  {
            rawfile=raw_$(printf "%03d" $n).raw
            # avconv -loglevel panic -i $file -f s16le -acodec pcm_s16le $rawfile
            # ffmpeg $file -f s16le -acodec pcm_s16le -vn -ac 1 -ar 16k $rawfile
@@ -44,39 +43,39 @@ fork_transcode () {
 
 maxsize=20000
 
-main () {
+main()  {
         # handle control-c better than just letting sox exit current rec.
         trap sighandler INT
 
         if [ $? -ne 0 ]; then
                 usage 1
-        fi
+  fi
 
         if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
                 usage 0
-        fi
+  fi
 
         n=1
-        while [ $(( $SECONDS / 3600 )) -lt $1 ]; do
+        while [ $(($SECONDS / 3600))   -lt $1 ]; do
                 file=recording_$(printf "%03d" $n).flac
                 rec --channels=2 --bits=16 --rate=44100 -t flac $file silence 1 5 2% 1 0:00:02 2%
-		filesize=$(stat -c%s "$file")
-		if (( filesize > maxsize )); then
-			printf "%s\n was sent for transcription:" "$file" >> transcriptions.txt 
-			echo $filesize >> transcriptions.txt
-			# added a rigctl query to yaesu when listening to HAM radio
-			# rigctl -m 122 -r /dev/ttyUSB0 -s 4800 get_freq >> transcriptions.txt
-			fork_transcode &
-			let n+=1
-		else
-			printf "Last file was not large enough: %s\n" "$file" >> transcriptions.txt
-			echo $filesize >> transcriptions.txt
-			let n+=1
-                	rm $file
-		fi
-        done
+    filesize=$(stat -c%s "$file")
+    if ((filesize > maxsize)); then
+      printf "%s\n was sent for transcription:" "$file" >> transcriptions.txt
+      echo $filesize >> transcriptions.txt
+      # added a rigctl query to yaesu when listening to HAM radio
+      # rigctl -m 122 -r /dev/ttyUSB0 -s 4800 get_freq >> transcriptions.txt
+      fork_transcode &
+      let n+=1
+    else
+      printf "Last file was not large enough: %s\n" "$file" >> transcriptions.txt
+      echo $filesize >> transcriptions.txt
+      let n+=1
+                 rm $file
+    fi
+  done
 }
-usage () {
+usage()  {
         cat << EOD
 Usage:
   $0 hours
@@ -86,7 +85,7 @@ EOD
         exit ${1:-0}
 }
 
-sighandler () {
+sighandler()  {
         exit "beep beep, bye!"
         exit 2
 }
