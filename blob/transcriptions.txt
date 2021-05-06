@@ -1,0 +1,28 @@
+Last file was not large enough: recording_001.flac
+830
+Last file was not large enough: recording_002.flac
+564
+recording_003.flac
+ was sent for transcription:273324
+Last file was not large enough: recording_004.flac
+883
+Last file was not large enough: recording_005.flac
+18544
+Last file was not large enough: recording_006.flac
+614
+recording_001.flac
+ was sent for transcription:181317
+recording_002.flac
+ was sent for transcription:99085
+recording_003.flac
+ was sent for transcription:39135
+recording_001.flac
+ was sent for transcription:82190
+Last file was not large enough: recording_002.flac
+1017
+Transcript: testing testing 1 2 3
+recording_003.flac
+ was sent for transcription:163452
+Last file was not large enough: recording_004.flac
+1595
+Transcript: rabid raccoon
