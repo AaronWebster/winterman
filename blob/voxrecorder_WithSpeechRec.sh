@@ -24,7 +24,7 @@ export AUDIODEV=hw:1,0
 
 # I did this before running scripts:
 # export GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
-# export GOOGLE_APPLICATION_CREDENTIALS="/home/pi/focus-champion-122520-98f9b9a3e314.json"
+export GOOGLE_APPLICATION_CREDENTIALS="/home/pi/focus-champion-122520-98f9b9a3e314.json"
 
 # I forked the transcoding so the recorder is listening more
 # so audio snippets between  silence get sent for forked transcoding and recorder restarts automatically -
@@ -41,7 +41,7 @@ fork_transcode()  {
            rm $rawfile
 }
 
-maxsize=20000
+maxsize=15000
 
 main()  {
         # handle control-c better than just letting sox exit current rec.

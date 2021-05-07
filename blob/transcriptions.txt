@@ -1,28 +1,53 @@
-Last file was not large enough: recording_001.flac
-830
-Last file was not large enough: recording_002.flac
-564
-recording_003.flac
- was sent for transcription:273324
-Last file was not large enough: recording_004.flac
-883
-Last file was not large enough: recording_005.flac
-18544
-Last file was not large enough: recording_006.flac
-614
 recording_001.flac
- was sent for transcription:181317
-recording_002.flac
- was sent for transcription:99085
-recording_003.flac
- was sent for transcription:39135
-recording_001.flac
- was sent for transcription:82190
+ was sent for transcription:27880
 Last file was not large enough: recording_002.flac
-1017
-Transcript: testing testing 1 2 3
-recording_003.flac
- was sent for transcription:163452
+2313
+Last file was not large enough: recording_003.flac
+13165
 Last file was not large enough: recording_004.flac
-1595
-Transcript: rabid raccoon
+1330
+recording_005.flac
+ was sent for transcription:1223244
+recording_006.flac
+ was sent for transcription:24423
+recording_007.flac
+ was sent for transcription:86562
+Transcript: tell me what I say comes up on me
+Transcript:  tuna casserole is delicious
+recording_008.flac
+ was sent for transcription:248090
+recording_009.flac
+ was sent for transcription:984922
+Transcript: that's kind of slow
+Transcript:  I didn't catch me saying that's kind of slow.
+recording_010.flac
+ was sent for transcription:464807
+Last file was not large enough: recording_011.flac
+226
+recording_012.flac
+ was sent for transcription:317090
+Last file was not large enough: recording_013.flac
+195
+Last file was not large enough: recording_014.flac
+173
+Last file was not large enough: recording_015.flac
+316
+recording_016.flac
+ was sent for transcription:341190
+recording_017.flac
+ was sent for transcription:681443
+recording_018.flac
+ was sent for transcription:103308
+Transcript: weirdo
+Transcript:  please say this on the thingy mabobber
+Transcript:  on the thingy Menudo
+Last file was not large enough: recording_019.flac
+12001
+recording_020.flac
+ was sent for transcription:388181
+recording_021.flac
+ was sent for transcription:94382
+Last file was not large enough: recording_022.flac
+208
+Last file was not large enough: recording_023.flac
+160
