@@ -23,4 +23,14 @@ for unit in "${enabled_units[@]}"; do
   systemctl start "${unit}"
 done
 
+
+pip_packages=(
+  "deepspeech"
+)
+
+for package in "${pip_packages[@]}"; do
+  pip3 install "${package}" --upgrade
+done
+
+
 exit 0
