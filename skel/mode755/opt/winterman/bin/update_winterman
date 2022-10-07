@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
 [[ "$(lsof /var/lib/dpkg/lock)" ]] && exit 0
